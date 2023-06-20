@@ -1,3 +1,5 @@
+//My Solution
+
 class Solution {
 public:
     vector<int> runningSum(vector<int>& nums) {
@@ -17,3 +19,6 @@ public:
        return nums;
     }
 };
+
+//Optimal Solution
+
