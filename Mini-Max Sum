@@ -1,0 +1,15 @@
+//Time Complexity: O(n) -> Space Complexity: O(n);
+
+void miniMaxSum(vector<int> arr) {
+vector<int> sums;
+int sum = 0;
+    for(int i = 0; i < arr.size(); i++){
+        sum+=arr[i];
+    }
+    for(int j = 0; j < arr.size(); j++){
+        sums.push_back(sum-arr[j]);
+    }
+    
+cout << *min_element(sums.begin(), sums.end()) << " " << *max_element(sums.begin(), sums.end()); 
+
+}
