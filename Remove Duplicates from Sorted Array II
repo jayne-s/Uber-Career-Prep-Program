@@ -1,0 +1,44 @@
+//Time Complexity: O(n*log(n)) -> Space Complexity: O(n)
+
+
+// Creating the map
+ int removeDuplicates(vector<int>& nums) {
+        map<int, int> frequency;
+        int count = 0;
+
+        for(int i = 0; i < nums.size(); i++){
+            if(frequency.find(nums[i]) != frequency.end()){
+                frequency[nums[i]]++;
+            }
+            else{
+                frequency.insert({nums[i], 1});
+            }
+        }
+
+// Testing the map
+     map<int, int>::iterator it = frequency.begin();
+ 
+   while (it != frequency.end())
+    {
+     std::cout << "Key: " << it->first << ", Value: " << it->second << std::endl;
+     ++it;
+   }
+
+
+//Removing Duplicates that exceed the limit of 2
+   
+        for(int j = 0; j < nums.size(); j++){
+         
+            if(frequency[nums[j]] <= 2) {
+               nums[count] = nums[j];
+               count++;
+            }
+            else{
+                nums[frequency[nums[j]] + count] = nums[frequency[nums[j]] + count];
+                //count++;
+                frequency[nums[j]]--;
+            }
+       
+    }
+return count;
+    }
