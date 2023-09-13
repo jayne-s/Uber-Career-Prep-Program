@@ -1,5 +1,9 @@
 //Time Complexity: O(n*logn) -> Space Complexity: O(n^2)
 
+#include <iostream>
+using namespace std;
+#include <string>
+#include<vector>
 
     vector<vector<int>> threeSum(vector<int>& nums) {
         int target = 0;
