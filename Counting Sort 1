@@ -1,5 +1,10 @@
 //Time Complexity: O(n) -> Space Complexity: O(1)
 
+#include <iostream>
+using namespace std;
+#include <string>
+#include<vector>
+
 vector<int> countingSort(vector<int> arr) {
     vector<int> freq(100);
     
